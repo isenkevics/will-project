@@ -13,19 +13,19 @@ static class Hello1
     //[STAThread] 
     public static void Main(string[] args)
     {
-        bool consoleMode = Boolean.Parse(args[0]); //true; // ;
+        bool consoleMode = false; // Boolean.Parse(args[0]); //true; // ;
  
         if (consoleMode) { 
             System.Console.WriteLine("consolemode started");
             System.Diagnostics.Debug.WriteLine("consolemode started");
 			System.Diagnostics.Debug.WriteLine("consolemode started - 2 time");
         } else {
-            System.Diagnostics.Debug.WriteLine("Hello, World!");
+            System.Diagnostics.Debug.WriteLine("Hello, World! - inicio");
             System.Console.WriteLine("Hello, World!");
             System.Console.WriteLine("Hello, World!");
             System.Console.WriteLine("Hello, World!");
             System.Console.WriteLine("Hello, World!");
-            System.Diagnostics.Debug.WriteLine("Hello, World!");
+            System.Diagnostics.Debug.WriteLine("Hello, World! - termino");
         }
         System.Console.WriteLine("consolemode finished");
         System.Diagnostics.Debug.WriteLine("consolemode finished");
