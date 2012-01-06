@@ -18,6 +18,7 @@ static class Hello1
         if (consoleMode) { 
             System.Console.WriteLine("consolemode started");
             System.Diagnostics.Debug.WriteLine("consolemode started");
+			System.Diagnostics.Debug.WriteLine("consolemode started - 2 time");
         } else {
             System.Diagnostics.Debug.WriteLine("Hello, World!");
             System.Console.WriteLine("Hello, World!");
@@ -28,6 +29,7 @@ static class Hello1
         }
         System.Console.WriteLine("consolemode finished");
         System.Diagnostics.Debug.WriteLine("consolemode finished");
+		System.Diagnostics.Debug.WriteLine("consolemode finished - 2 time");
     }
 }
 
