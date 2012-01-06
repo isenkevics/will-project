@@ -22,12 +22,14 @@ static class Hello1
         } else {
             System.Diagnostics.Debug.WriteLine("Hello, World! - inicio");
 			System.Diagnostics.Debug.WriteLine("Hello, World! - inicio - 1");
+		    System.Diagnostics.Debug.WriteLine("Hello, World! - inicio - 2");
             System.Console.WriteLine("Hello, World!");
             System.Console.WriteLine("Hello, World!");
             System.Console.WriteLine("Hello, World!");
             System.Console.WriteLine("Hello, World!");
             System.Diagnostics.Debug.WriteLine("Hello, World! - termino");
 			System.Diagnostics.Debug.WriteLine("Hello, World! - termino - 1");
+			System.Diagnostics.Debug.WriteLine("Hello, World! - termino - 2");
         }
         System.Console.WriteLine("consolemode finished");
         System.Diagnostics.Debug.WriteLine("consolemode finished");
