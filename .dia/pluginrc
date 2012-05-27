@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugins>
+  <plugin filename="&lt;builtin&gt;">
+    <name>Internal</name>
+    <description>Objetos e filtros internos do Dia</description>
+  </plugin>
+  <plugin filename="C:\DiaFlowchart\dia\xslt.dll">
+    <name>XSLT</name>
+    <description>Filtro de transformação XSL</description>
+  </plugin>
+  <plugin filename="C:\DiaFlowchart\dia\xfig.dll">
+    <name>FIG</name>
+    <description>Filtro de importação e exportação para o formato Fig</description>
+  </plugin>
+  <plugin filename="C:\DiaFlowchart\dia\wpg.dll">
+    <name>WPG</name>
+    <description>Filtro de exportação para gráficos do WordPerfect</description>
+  </plugin>
+  <plugin filename="C:\DiaFlowchart\dia\wmf.dll">
+    <name>WMF</name>
+    <description>Filtro de exportação para WMF</description>
+  </plugin>
+  <plugin filename="C:\DiaFlowchart\dia\vdx.dll">
+    <name>VDX</name>
+    <description>Filtro de importação e exportação do formato XML do Visio</description>
+  </plugin>
+  <plugin filename="C:\DiaFlowchart\dia\uml.dll">
+    <name>UML</name>
+    <description>Objetos do diagrama da Linguagem de Modelagem Unificada UML 1.3</description>
+  </plugin>
+  <plugin filename="C:\DiaFlowchart\dia\svg.dll">
+    <name>SVG</name>
+    <description>Filtros de importação e exportação para o formato Scalable Vector Graphics</description>
+  </plugin>
+  <plugin filename="C:\DiaFlowchart\dia\standard.dll">
+    <name>Standard</name>
+    <description>Objetos padrão</description>
+  </plugin>
+  <plugin filename="C:\DiaFlowchart\dia\shape.dll">
+    <name>shape</name>
+    <description>dia shape export filter</description>
+  </plugin>
+  <plugin filename="C:\DiaFlowchart\dia\sadt.dll">
+    <name>SADT</name>
+    <description>Objetos de diagrama SADT</description>
+  </plugin>
+  <plugin filename="C:\DiaFlowchart\dia\pstricks.dll">
+    <name>Pstricks</name>
+    <description>Filtro de exportação para TeX Pstricks</description>
+  </plugin>
+  <plugin filename="C:\DiaFlowchart\dia\postscript.dll">
+    <name>Postscript</name>
+    <description>Renderização do Postscript</description>
+  </plugin>
+  <plugin filename="C:\DiaFlowchart\dia\pixbuf.dll">
+    <name>Pixbuf</name>
+    <description>gdk-pixbuf based bitmap export/import</description>
+  </plugin>
+  <plugin filename="C:\DiaFlowchart\dia\pgf.dll">
+    <name>PGF</name>
+    <description>Filtro de exportação para LaTeX PGF</description>
+  </plugin>
+  <plugin filename="C:\DiaFlowchart\dia\network.dll">
+    <name>Network</name>
+    <description>Objetos de diagrama de rede</description>
+  </plugin>
+  <plugin filename="C:\DiaFlowchart\dia\misc.dll">
+    <name>Misc</name>
+    <description>Miscelânea de objetos</description>
+  </plugin>
+  <plugin filename="C:\DiaFlowchart\dia\metapost.dll">
+    <name>Metapost</name>
+    <description>Filtro de exportação para TeX Metapost</description>
+  </plugin>
+  <plugin filename="C:\DiaFlowchart\dia\libart.dll">
+    <name>Libart</name>
+    <description>Renderização baseada na Libart</description>
+  </plugin>
+  <plugin filename="C:\DiaFlowchart\dia\Kaos.dll">
+    <name>KAOS</name>
+    <description>Diagrama KAOS</description>
+  </plugin>
+  <plugin filename="C:\DiaFlowchart\dia\Jackson.dll">
+    <name>Jackson</name>
+    <description>Diagrama de Jackson</description>
+  </plugin>
+  <plugin filename="C:\DiaFlowchart\dia\Istar.dll">
+    <name>Istar</name>
+    <description>Diagrama Istar</description>
+  </plugin>
+  <plugin filename="C:\DiaFlowchart\dia\hpgl.dll">
+    <name>HPGL</name>
+    <description>Filtro de exportação para Linguagem Gráfica HP</description>
+  </plugin>
+  <plugin filename="C:\DiaFlowchart\dia\grafcet.dll">
+    <name>GRAFCET</name>
+    <description>Diagrama de objetos GRAFCET</description>
+  </plugin>
+  <plugin filename="C:\DiaFlowchart\dia\fs.dll">
+    <name>FS</name>
+    <description>Objetos do diagrama de estrutura funcional</description>
+  </plugin>
+  <plugin filename="C:\DiaFlowchart\dia\flowchart.dll">
+    <name>Flowchart</name>
+    <description>Objetos de fluxograma</description>
+  </plugin>
+  <plugin filename="C:\DiaFlowchart\dia\er.dll">
+    <name>ER</name>
+    <description>Objetos do diagrama Entidade/Relacionamento</description>
+  </plugin>
+  <plugin filename="C:\DiaFlowchart\dia\dxf.dll">
+    <name>DXF</name>
+    <description>Filtros de importação e exportação para o formato DXF</description>
+  </plugin>
+  <plugin filename="C:\DiaFlowchart\dia\Database.dll">
+    <name>ERT</name>
+    <description>Objetos do diagrama de tabelas entidade/relacionamento</description>
+  </plugin>
+  <plugin filename="C:\DiaFlowchart\dia\custom_lines.dll">
+    <name>CustomLines</name>
+    <description>Carregador de linhas XML personalizadas</description>
+  </plugin>
+  <plugin filename="C:\DiaFlowchart\dia\custom.dll">
+    <name>Personalizar</name>
+    <description>Carregador de formas XML personalizadas</description>
+  </plugin>
+  <plugin filename="C:\DiaFlowchart\dia\chronogram.dll">
+    <name>Chronogram</name>
+    <description>Objetos do diagrama de cronograma</description>
+  </plugin>
+  <plugin filename="C:\DiaFlowchart\dia\cgm.dll">
+    <name>CGM</name>
+    <description>Filtro de exportação para CGM</description>
+  </plugin>
+  <plugin filename="C:\DiaFlowchart\dia\cairo.dll">
+    <name>Cairo</name>
+    <description>Renderização baseada na Cairo</description>
+  </plugin>
+  <plugin filename="C:\DiaFlowchart\dia\aadl.dll">
+    <name>AADL</name>
+    <description>Objetos do diagrama da linguagem de projeto e análise de arquitetura</description>
+  </plugin>
+</plugins>
