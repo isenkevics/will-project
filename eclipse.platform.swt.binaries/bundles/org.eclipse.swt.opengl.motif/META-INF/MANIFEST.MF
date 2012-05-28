@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Fragment-Host: org.eclipse.swt.opengl; bundle-version="[3.0.0,4.0.0)"
+Bundle-Name: %fragmentName
+Bundle-Vendor: %providerName
+Bundle-SymbolicName: org.eclipse.swt.opengl.motif;singleton=true
+Bundle-Version: 3.1.0
+Bundle-Localization: fragment
+Provide-Package: 
+ org.eclipse.swt.opengl

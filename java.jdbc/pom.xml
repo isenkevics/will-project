@@ -1,0 +1,74 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <artifactId>java.jdbc</artifactId>
+  <version>0.2.2-SNAPSHOT</version>
+  <name>${project.artifactId}</name>
+
+  <parent>
+    <groupId>org.clojure</groupId>
+    <artifactId>pom.contrib</artifactId>
+    <version>0.0.25</version>
+  </parent>
+
+  <developers>
+    <developer>
+      <name>Stephen C. Gilardi</name>
+    </developer>
+    <developer>
+      <name>Sean Corfield</name>
+    </developer>
+  </developers>
+
+  <scm>
+    <connection>scm:git:git@github.com:clojure/java.jdbc.git</connection>
+    <developerConnection>scm:git:git@github.com:clojure/java.jdbc.git</developerConnection>
+    <url>git@github.com:clojure/java.jdbc.git</url>
+  </scm>
+  <dependencies>
+  	<dependency>
+  		<groupId>mysql</groupId>
+  		<artifactId>mysql-connector-java</artifactId>
+  		<version>5.1.6</version>
+  		<scope>test</scope>
+  	</dependency>
+  	<dependency>
+  		<groupId>org.apache.derby</groupId>
+  		<artifactId>derby</artifactId>
+  		<version>10.8.1.2</version>
+  		<scope>test</scope>
+  	</dependency>
+  	<dependency>
+  		<groupId>hsqldb</groupId>
+  		<artifactId>hsqldb</artifactId>
+  		<version>1.8.0.10</version>
+  		<scope>test</scope>
+  	</dependency>
+    <dependency>
+      <groupId>postgresql</groupId>
+      <artifactId>postgresql</artifactId>
+      <version>8.4-702.jdbc4</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.xerial</groupId>
+      <artifactId>sqlite-jdbc</artifactId>
+      <version>3.7.2</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>net.sourceforge.jtds</groupId>
+      <artifactId>jtds</artifactId>
+      <version>1.2.4</version>
+      <scope>test</scope>
+    </dependency>
+    <!-- assumes you have the Microsoft JDBC4 Driver 3.0 installed locally -->
+    <!--
+    <dependency>
+      <groupId>sqljdbc4</groupId>
+      <artifactId>sqljdbc4</artifactId>
+      <version>3.0</version>
+      <scope>test</scope>
+    </dependency>
+    -->
+  </dependencies>
+</project>

@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="org.eclipse.swt.opengl.gtk" default="build.jars" basedir=".">
+
+	<target name="init" depends="properties">
+		<property name="fragment" value="org.eclipse.swt.opengl.gtk"/>
+		<property name="version.suffix" value="_3.1.0"/>
+		<property name="full.name" value="${fragment}${version.suffix}"/>
+		<property name="temp.folder" value="${basedir}/temp.folder"/>
+		<property name="plugin.destination" value="${basedir}"/>
+		<property name="build.result.folder" value="${basedir}"/>
+		<property name="destination" value="${basedir}"/>
+		<property name="plugindir" value="../org.eclipse.swt.opengl"/>
+		<property name="os" value="linux"/>
+		<property name="ws" value="gtk"/>
+		<property name="arch" value="x86"/>
+		<property name="bootclasspath" value=""/>
+		<property name="classpath" value="../org.eclipse.swt/bin/"/>
+	</target>
+
+	<target name="properties" if="eclipse.running">
+		<property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter"/>
+	</target>
+
+	<target name="build.update.jar" depends="init">
+		<delete dir="${temp.folder}"/>
+		<mkdir dir="${temp.folder}"/>
+		<antcall target="build.jars"/>
+		<antcall target="gather.bin.parts">
+			<param name="destination.temp.folder" value="${temp.folder}/"/>
+		</antcall>
+		<zip zipfile="${plugin.destination}/${full.name}.jar" basedir="${temp.folder}/${full.name}" filesonly="false"/>
+		<delete dir="${temp.folder}"/>
+	</target>
+	
+	<target name="ws/gtk/opengl.jar" depends="init" unless="ws/gtk/opengl.jar">
+		<property name="destdir" value="${temp.folder}/ws/gtk/opengl.jar.bin"/>
+		<delete dir="${temp.folder}/ws/gtk/opengl.jar.bin"/>
+		<mkdir dir="${temp.folder}/ws/gtk/opengl.jar.bin"/>
+		<javac destdir="${temp.folder}/ws/gtk/opengl.jar.bin" verbose="true" debug="on" failonerror="no" bootclasspath="${bootclasspath}" classpath="${classpath}" source="1.3" target="1.2">
+			<src path="${plugindir}/gtk/"/>
+			<src path="${plugindir}/common/"/>
+		</javac>
+        <property name="includes" value=""/>
+        <property name="excludes" value="**/*.java,**/library/,**/package.htm*"/>
+		<copy todir="${temp.folder}/ws/gtk/opengl.jar.bin">
+			<fileset dir="${plugindir}/gtk/" includes="${includes}" excludes="${excludes}"/>
+			<fileset dir="${plugindir}/common/" includes="${includes}" excludes="${excludes}"/>
+		</copy>
+		<!-- filter out files and folders that should not be included in the opengl.jar -->
+		<delete dir="${temp.folder}/ws/gtk/opengl.jar.bin/common/library/"/>
+		<delete dir="${temp.folder}/ws/gtk/opengl.jar.bin/gtk/library/"/>
+
+		<mkdir dir="${build.result.folder}/ws/gtk/"/>
+		<jar jarfile="${build.result.folder}/ws/gtk/opengl.jar" basedir="${temp.folder}/ws/gtk/opengl.jar.bin"/>
+		<delete dir="${temp.folder}/ws/gtk/opengl.jar.bin"/>
+		<mkdir dir="${plugindir}/ws/gtk"/>
+	</target>
+
+	<target name="build.jars" depends="init">
+		<available property="ws/gtk/opengl.jar" file="${build.result.folder}/ws/gtk/opengl.jar"/>
+		<antcall target="ws/gtk/opengl.jar"/>
+	</target>
+
+	<target name="ws/gtk/openglsrc.zip" depends="init" unless="ws/gtk/openglsrc.zip">
+		<mkdir dir="${build.result.folder}/ws/gtk"/>
+		<zip zipfile="${build.result.folder}/ws/gtk/openglsrc.zip">
+			<fileset dir="${plugindir}/gtk/" includes="**/*.java" excludes=""/>
+			<fileset dir="${plugindir}/gtk/library/"/>
+			<fileset dir="${plugindir}/common/" includes="**/*.java" excludes=""/>
+			<fileset dir="${plugindir}/common/library/"/>
+		</zip>
+	</target>
+
+	<target name="build.sources" depends="init">
+		<available property="ws/gtk/openglsrc.zip" file="${build.result.folder}/ws/gtk/openglsrc.zip"/>
+		<antcall target="ws/gtk/openglsrc.zip"/>
+	</target>
+
+	<target name="build.zips" depends="init">
+	</target>
+
+	<target name="gather.sources" depends="init" if="destination.temp.folder">
+		<mkdir dir="${destination.temp.folder}/${full.name}/ws/gtk"/>
+		<copy file="${build.result.folder}/ws/gtk/openglsrc.zip" todir="${destination.temp.folder}/${full.name}/ws/gtk"/>
+		<copy todir="${destination.temp.folder}/${full.name}">
+			<fileset dir="${basedir}" includes="about.html"/>
+		</copy>
+	</target>
+	
+	<target name="gather.logs" depends="init" if="destination.temp.folder">
+		<mkdir dir="${destination.temp.folder}/${full.name}/ws/gtk"/>
+		<copy file="${temp.folder}/ws/gtk/opengl.jar.bin.log" todir="${destination.temp.folder}/${full.name}/ws/gtk"/>
+	</target>
+
+	<target name="gather.bin.parts" depends="init" if="destination.temp.folder">
+		<mkdir dir="${destination.temp.folder}/${full.name}/ws/gtk"/>
+		<copy file="${build.result.folder}/ws/gtk/opengl.jar" todir="${destination.temp.folder}/${full.name}/ws/gtk"/>
+		<copy todir="${destination.temp.folder}/${full.name}">
+			<fileset dir="${basedir}" includes="fragment.properties,fragment.xml,about.html,os/${os}/,META-INF/"/> 
+		</copy>
+	</target>
+	
+	<target name="clean" depends="init">
+		<delete file="${build.result.folder}/ws/gtk/opengl.jar"/>
+		<delete file="${build.result.folder}/ws/gtk/openglsrc.zip"/>
+		<delete file="${plugin.destination}/${full.name}.jar"/>
+		<delete file="${plugin.destination}/${full.name}.zip"/>
+		<delete dir="${temp.folder}"/>
+	</target>
+
+	<target name="refresh" depends="init" if="eclipse.running">
+		<eclipse.refreshLocal resource="${fragment}" depth="infinite"/>
+	</target>
+
+	<target name="zip.plugin" depends="init">
+		<delete dir="${temp.folder}"/>
+		<mkdir dir="${temp.folder}"/>
+		<antcall target="build.jars"/>
+		<antcall target="build.sources"/>
+		<antcall target="gather.bin.parts">
+			<param name="destination.temp.folder" value="${temp.folder}/"/>
+		</antcall>
+		<antcall target="gather.sources">
+			<param name="destination.temp.folder" value="${temp.folder}/"/>
+		</antcall>
+		<delete>
+			<fileset dir="${temp.folder}" includes="**/*.bin.log"/>
+		</delete>
+		<zip zipfile="${plugin.destination}/${full.name}.zip" basedir="${temp.folder}" filesonly="true"/>
+		<delete dir="${temp.folder}"/>
+	</target>
+
+</project>
